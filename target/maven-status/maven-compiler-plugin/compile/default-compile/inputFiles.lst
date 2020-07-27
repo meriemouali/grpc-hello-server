@@ -1,0 +1,4 @@
+/home/meriemouali/jProjects/grpc-hello-server/target/generated-sources/protobuf/java/com/example/grpc/GreetingServiceOuterClass.java
+/home/meriemouali/jProjects/grpc-hello-server/target/generated-sources/protobuf/grpc-java/com/example/grpc/GreetingServiceGrpc.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/GreetingServiceImpl.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/App.java
