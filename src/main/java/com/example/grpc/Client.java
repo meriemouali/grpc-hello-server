@@ -20,7 +20,7 @@ public class Client
                 GreetingServiceOuterClass.HelloRequest.newBuilder()
                         .setName("Ray")
                         .build();
-
+       ;
         // Finally, make the call using the stub
         GreetingServiceOuterClass.HelloResponse response =
                 stub.greeting(request);

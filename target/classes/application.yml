@@ -1,0 +1,8 @@
+grpc:
+  port: 9001
+  enableReflection: true
+logging:
+  level:
+    org.springframework.web: debug
+    org.springframework.security: error
+    com.tes.regulationdocs: debug

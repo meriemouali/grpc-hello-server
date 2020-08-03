@@ -1,4 +1,9 @@
 /home/meriemouali/jProjects/grpc-hello-server/target/generated-sources/protobuf/java/com/example/grpc/GreetingServiceOuterClass.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/service/PersonService.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/model/Person.java
 /home/meriemouali/jProjects/grpc-hello-server/target/generated-sources/protobuf/grpc-java/com/example/grpc/GreetingServiceGrpc.java
-/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/GreetingServiceImpl.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/service/GreetingServiceImpl.java
 /home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/App.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/Client.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/service/PersonServiceImp.java
+/home/meriemouali/jProjects/grpc-hello-server/src/main/java/com/example/grpc/repository/PersonRepo.java

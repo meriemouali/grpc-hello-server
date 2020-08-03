@@ -43,6 +43,32 @@ public final class GreetingServiceGrpc {
               com.example.grpc.GreetingServiceOuterClass.HelloResponse.getDefaultInstance()))
           .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("greeting"))
           .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.example.grpc.GreetingServiceOuterClass.GetPersonRequest,
+      com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> METHOD_GET_PERSON_BY_ID =
+      io.grpc.MethodDescriptor.<com.example.grpc.GreetingServiceOuterClass.GetPersonRequest, com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "com.example.grpc.GreetingService", "getPersonById"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.GetPersonRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.GetPersonResponse.getDefaultInstance()))
+          .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("getPersonById"))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest,
+      com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> METHOD_CREATE_PERSON =
+      io.grpc.MethodDescriptor.<com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest, com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "com.example.grpc.GreetingService", "createPerson"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.GetPersonResponse.getDefaultInstance()))
+          .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("createPerson"))
+          .build();
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -84,6 +110,20 @@ public final class GreetingServiceGrpc {
       asyncUnimplementedUnaryCall(METHOD_GREETING, responseObserver);
     }
 
+    /**
+     */
+    public void getPersonById(com.example.grpc.GreetingServiceOuterClass.GetPersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_PERSON_BY_ID, responseObserver);
+    }
+
+    /**
+     */
+    public void createPerson(com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_CREATE_PERSON, responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -93,6 +133,20 @@ public final class GreetingServiceGrpc {
                 com.example.grpc.GreetingServiceOuterClass.HelloRequest,
                 com.example.grpc.GreetingServiceOuterClass.HelloResponse>(
                   this, METHODID_GREETING)))
+          .addMethod(
+            METHOD_GET_PERSON_BY_ID,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.GetPersonRequest,
+                com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>(
+                  this, METHODID_GET_PERSON_BY_ID)))
+          .addMethod(
+            METHOD_CREATE_PERSON,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest,
+                com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>(
+                  this, METHODID_CREATE_PERSON)))
           .build();
     }
   }
@@ -128,6 +182,22 @@ public final class GreetingServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GREETING, getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPersonById(com.example.grpc.GreetingServiceOuterClass.GetPersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_GET_PERSON_BY_ID, getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createPerson(com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_CREATE_PERSON, getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +229,20 @@ public final class GreetingServiceGrpc {
     public com.example.grpc.GreetingServiceOuterClass.HelloResponse greeting(com.example.grpc.GreetingServiceOuterClass.HelloRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GREETING, getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.example.grpc.GreetingServiceOuterClass.GetPersonResponse getPersonById(com.example.grpc.GreetingServiceOuterClass.GetPersonRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_GET_PERSON_BY_ID, getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.example.grpc.GreetingServiceOuterClass.GetPersonResponse createPerson(com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_CREATE_PERSON, getCallOptions(), request);
     }
   }
 
@@ -193,9 +277,27 @@ public final class GreetingServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GREETING, getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> getPersonById(
+        com.example.grpc.GreetingServiceOuterClass.GetPersonRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_GET_PERSON_BY_ID, getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> createPerson(
+        com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_CREATE_PERSON, getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GREETING = 0;
+  private static final int METHODID_GET_PERSON_BY_ID = 1;
+  private static final int METHODID_CREATE_PERSON = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -217,6 +319,14 @@ public final class GreetingServiceGrpc {
         case METHODID_GREETING:
           serviceImpl.greeting((com.example.grpc.GreetingServiceOuterClass.HelloRequest) request,
               (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloResponse>) responseObserver);
+          break;
+        case METHODID_GET_PERSON_BY_ID:
+          serviceImpl.getPersonById((com.example.grpc.GreetingServiceOuterClass.GetPersonRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PERSON:
+          serviceImpl.createPerson((com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -280,6 +390,8 @@ public final class GreetingServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GreetingServiceFileDescriptorSupplier())
               .addMethod(METHOD_GREETING)
+              .addMethod(METHOD_GET_PERSON_BY_ID)
+              .addMethod(METHOD_CREATE_PERSON)
               .build();
         }
       }
