@@ -4721,6 +4721,1152 @@ public final class GreetingServiceOuterClass {
 
   }
 
+  public interface GetAllPersonRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.example.grpc.GetAllPersonRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * Defining a Service, a Service can have multiple RPC operations
+   * </pre>
+   *
+   * Protobuf type {@code com.example.grpc.GetAllPersonRequest}
+   */
+  public  static final class GetAllPersonRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.example.grpc.GetAllPersonRequest)
+      GetAllPersonRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetAllPersonRequest.newBuilder() to construct.
+    private GetAllPersonRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetAllPersonRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetAllPersonRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.class, com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest)) {
+        return super.equals(obj);
+      }
+      com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest other = (com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Defining a Service, a Service can have multiple RPC operations
+     * </pre>
+     *
+     * Protobuf type {@code com.example.grpc.GetAllPersonRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.example.grpc.GetAllPersonRequest)
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.class, com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.Builder.class);
+      }
+
+      // Construct using com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonRequest_descriptor;
+      }
+
+      public com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest getDefaultInstanceForType() {
+        return com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.getDefaultInstance();
+      }
+
+      public com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest build() {
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest buildPartial() {
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest result = new com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest) {
+          return mergeFrom((com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest other) {
+        if (other == com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.example.grpc.GetAllPersonRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.example.grpc.GetAllPersonRequest)
+    private static final com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest();
+    }
+
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetAllPersonRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetAllPersonRequest>() {
+      public GetAllPersonRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GetAllPersonRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetAllPersonRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetAllPersonRequest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetAllPersonResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.example.grpc.GetAllPersonResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    java.util.List<com.example.grpc.GreetingServiceOuterClass.Person> 
+        getAllPersonsList();
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    com.example.grpc.GreetingServiceOuterClass.Person getAllPersons(int index);
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    int getAllPersonsCount();
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    java.util.List<? extends com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder> 
+        getAllPersonsOrBuilderList();
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder getAllPersonsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.example.grpc.GetAllPersonResponse}
+   */
+  public  static final class GetAllPersonResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.example.grpc.GetAllPersonResponse)
+      GetAllPersonResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetAllPersonResponse.newBuilder() to construct.
+    private GetAllPersonResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetAllPersonResponse() {
+      allPersons_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetAllPersonResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                allPersons_ = new java.util.ArrayList<com.example.grpc.GreetingServiceOuterClass.Person>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              allPersons_.add(
+                  input.readMessage(com.example.grpc.GreetingServiceOuterClass.Person.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          allPersons_ = java.util.Collections.unmodifiableList(allPersons_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.class, com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.Builder.class);
+    }
+
+    public static final int ALL_PERSONS_FIELD_NUMBER = 1;
+    private java.util.List<com.example.grpc.GreetingServiceOuterClass.Person> allPersons_;
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    public java.util.List<com.example.grpc.GreetingServiceOuterClass.Person> getAllPersonsList() {
+      return allPersons_;
+    }
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    public java.util.List<? extends com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder> 
+        getAllPersonsOrBuilderList() {
+      return allPersons_;
+    }
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    public int getAllPersonsCount() {
+      return allPersons_.size();
+    }
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    public com.example.grpc.GreetingServiceOuterClass.Person getAllPersons(int index) {
+      return allPersons_.get(index);
+    }
+    /**
+     * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+     */
+    public com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder getAllPersonsOrBuilder(
+        int index) {
+      return allPersons_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < allPersons_.size(); i++) {
+        output.writeMessage(1, allPersons_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < allPersons_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, allPersons_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse)) {
+        return super.equals(obj);
+      }
+      com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse other = (com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse) obj;
+
+      boolean result = true;
+      result = result && getAllPersonsList()
+          .equals(other.getAllPersonsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAllPersonsCount() > 0) {
+        hash = (37 * hash) + ALL_PERSONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllPersonsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.example.grpc.GetAllPersonResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.example.grpc.GetAllPersonResponse)
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonResponse_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.class, com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.Builder.class);
+      }
+
+      // Construct using com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAllPersonsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (allPersonsBuilder_ == null) {
+          allPersons_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          allPersonsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_GetAllPersonResponse_descriptor;
+      }
+
+      public com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse getDefaultInstanceForType() {
+        return com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.getDefaultInstance();
+      }
+
+      public com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse build() {
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse buildPartial() {
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse result = new com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (allPersonsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            allPersons_ = java.util.Collections.unmodifiableList(allPersons_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.allPersons_ = allPersons_;
+        } else {
+          result.allPersons_ = allPersonsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse) {
+          return mergeFrom((com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse other) {
+        if (other == com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.getDefaultInstance()) return this;
+        if (allPersonsBuilder_ == null) {
+          if (!other.allPersons_.isEmpty()) {
+            if (allPersons_.isEmpty()) {
+              allPersons_ = other.allPersons_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAllPersonsIsMutable();
+              allPersons_.addAll(other.allPersons_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.allPersons_.isEmpty()) {
+            if (allPersonsBuilder_.isEmpty()) {
+              allPersonsBuilder_.dispose();
+              allPersonsBuilder_ = null;
+              allPersons_ = other.allPersons_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              allPersonsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAllPersonsFieldBuilder() : null;
+            } else {
+              allPersonsBuilder_.addAllMessages(other.allPersons_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.example.grpc.GreetingServiceOuterClass.Person> allPersons_ =
+        java.util.Collections.emptyList();
+      private void ensureAllPersonsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          allPersons_ = new java.util.ArrayList<com.example.grpc.GreetingServiceOuterClass.Person>(allPersons_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.grpc.GreetingServiceOuterClass.Person, com.example.grpc.GreetingServiceOuterClass.Person.Builder, com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder> allPersonsBuilder_;
+
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public java.util.List<com.example.grpc.GreetingServiceOuterClass.Person> getAllPersonsList() {
+        if (allPersonsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(allPersons_);
+        } else {
+          return allPersonsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public int getAllPersonsCount() {
+        if (allPersonsBuilder_ == null) {
+          return allPersons_.size();
+        } else {
+          return allPersonsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public com.example.grpc.GreetingServiceOuterClass.Person getAllPersons(int index) {
+        if (allPersonsBuilder_ == null) {
+          return allPersons_.get(index);
+        } else {
+          return allPersonsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder setAllPersons(
+          int index, com.example.grpc.GreetingServiceOuterClass.Person value) {
+        if (allPersonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAllPersonsIsMutable();
+          allPersons_.set(index, value);
+          onChanged();
+        } else {
+          allPersonsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder setAllPersons(
+          int index, com.example.grpc.GreetingServiceOuterClass.Person.Builder builderForValue) {
+        if (allPersonsBuilder_ == null) {
+          ensureAllPersonsIsMutable();
+          allPersons_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          allPersonsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder addAllPersons(com.example.grpc.GreetingServiceOuterClass.Person value) {
+        if (allPersonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAllPersonsIsMutable();
+          allPersons_.add(value);
+          onChanged();
+        } else {
+          allPersonsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder addAllPersons(
+          int index, com.example.grpc.GreetingServiceOuterClass.Person value) {
+        if (allPersonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAllPersonsIsMutable();
+          allPersons_.add(index, value);
+          onChanged();
+        } else {
+          allPersonsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder addAllPersons(
+          com.example.grpc.GreetingServiceOuterClass.Person.Builder builderForValue) {
+        if (allPersonsBuilder_ == null) {
+          ensureAllPersonsIsMutable();
+          allPersons_.add(builderForValue.build());
+          onChanged();
+        } else {
+          allPersonsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder addAllPersons(
+          int index, com.example.grpc.GreetingServiceOuterClass.Person.Builder builderForValue) {
+        if (allPersonsBuilder_ == null) {
+          ensureAllPersonsIsMutable();
+          allPersons_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          allPersonsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder addAllAllPersons(
+          java.lang.Iterable<? extends com.example.grpc.GreetingServiceOuterClass.Person> values) {
+        if (allPersonsBuilder_ == null) {
+          ensureAllPersonsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, allPersons_);
+          onChanged();
+        } else {
+          allPersonsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder clearAllPersons() {
+        if (allPersonsBuilder_ == null) {
+          allPersons_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          allPersonsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public Builder removeAllPersons(int index) {
+        if (allPersonsBuilder_ == null) {
+          ensureAllPersonsIsMutable();
+          allPersons_.remove(index);
+          onChanged();
+        } else {
+          allPersonsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public com.example.grpc.GreetingServiceOuterClass.Person.Builder getAllPersonsBuilder(
+          int index) {
+        return getAllPersonsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder getAllPersonsOrBuilder(
+          int index) {
+        if (allPersonsBuilder_ == null) {
+          return allPersons_.get(index);  } else {
+          return allPersonsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public java.util.List<? extends com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder> 
+           getAllPersonsOrBuilderList() {
+        if (allPersonsBuilder_ != null) {
+          return allPersonsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(allPersons_);
+        }
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public com.example.grpc.GreetingServiceOuterClass.Person.Builder addAllPersonsBuilder() {
+        return getAllPersonsFieldBuilder().addBuilder(
+            com.example.grpc.GreetingServiceOuterClass.Person.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public com.example.grpc.GreetingServiceOuterClass.Person.Builder addAllPersonsBuilder(
+          int index) {
+        return getAllPersonsFieldBuilder().addBuilder(
+            index, com.example.grpc.GreetingServiceOuterClass.Person.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.example.grpc.Person all_persons = 1;</code>
+       */
+      public java.util.List<com.example.grpc.GreetingServiceOuterClass.Person.Builder> 
+           getAllPersonsBuilderList() {
+        return getAllPersonsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.example.grpc.GreetingServiceOuterClass.Person, com.example.grpc.GreetingServiceOuterClass.Person.Builder, com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder> 
+          getAllPersonsFieldBuilder() {
+        if (allPersonsBuilder_ == null) {
+          allPersonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.example.grpc.GreetingServiceOuterClass.Person, com.example.grpc.GreetingServiceOuterClass.Person.Builder, com.example.grpc.GreetingServiceOuterClass.PersonOrBuilder>(
+                  allPersons_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          allPersons_ = null;
+        }
+        return allPersonsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.example.grpc.GetAllPersonResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.example.grpc.GetAllPersonResponse)
+    private static final com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse();
+    }
+
+    public static com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetAllPersonResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetAllPersonResponse>() {
+      public GetAllPersonResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GetAllPersonResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetAllPersonResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetAllPersonResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_example_grpc_HelloRequest_descriptor;
   private static final 
@@ -4751,6 +5897,16 @@ public final class GreetingServiceOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_example_grpc_CreatePersonRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_example_grpc_GetAllPersonRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_example_grpc_GetAllPersonRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_example_grpc_GetAllPersonResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_example_grpc_GetAllPersonResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4772,14 +5928,21 @@ public final class GreetingServiceOuterClass {
       "atePersonRequest\022\021\n\tperson_id\030\001 \001(\t\022\022\n\nf",
       "irst_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022\025\n\rsm" +
       "all_picture\030\004 \001(\014\022\013\n\003age\030\005 \001(\005\022\025\n\rphone_" +
-      "numbers\030\006 \003(\t2\224\002\n\017GreetingService\022K\n\010gre" +
-      "eting\022\036.com.example.grpc.HelloRequest\032\037." +
-      "com.example.grpc.HelloResponse\022X\n\rgetPer" +
-      "sonById\022\".com.example.grpc.GetPersonRequ" +
-      "est\032#.com.example.grpc.GetPersonResponse" +
-      "\022Z\n\014createPerson\022%.com.example.grpc.Crea" +
-      "tePersonRequest\032#.com.example.grpc.GetPe" +
-      "rsonResponseb\006proto3"
+      "numbers\030\006 \003(\t\"\025\n\023GetAllPersonRequest\"E\n\024" +
+      "GetAllPersonResponse\022-\n\013all_persons\030\001 \003(" +
+      "\0132\030.com.example.grpc.Person2\315\003\n\017Greeting" +
+      "Service\022K\n\010greeting\022\036.com.example.grpc.H" +
+      "elloRequest\032\037.com.example.grpc.HelloResp" +
+      "onse\022X\n\rgetPersonById\022\".com.example.grpc" +
+      ".GetPersonRequest\032#.com.example.grpc.Get" +
+      "PersonResponse\022Z\n\014createPerson\022%.com.exa",
+      "mple.grpc.CreatePersonRequest\032#.com.exam" +
+      "ple.grpc.GetPersonResponse\022Z\n\014updatePers" +
+      "on\022%.com.example.grpc.CreatePersonReques" +
+      "t\032#.com.example.grpc.GetPersonResponse\022[" +
+      "\n\ngetPersons\022%.com.example.grpc.GetAllPe" +
+      "rsonRequest\032&.com.example.grpc.GetAllPer" +
+      "sonResponseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4829,6 +5992,18 @@ public final class GreetingServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_grpc_CreatePersonRequest_descriptor,
         new java.lang.String[] { "PersonId", "FirstName", "LastName", "SmallPicture", "Age", "PhoneNumbers", });
+    internal_static_com_example_grpc_GetAllPersonRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_example_grpc_GetAllPersonRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_example_grpc_GetAllPersonRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_com_example_grpc_GetAllPersonResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_example_grpc_GetAllPersonResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_example_grpc_GetAllPersonResponse_descriptor,
+        new java.lang.String[] { "AllPersons", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -16,9 +16,6 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
 /**
- * <pre>
- * Defining a Service, a Service can have multiple RPC operations
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.7.0)",
@@ -69,6 +66,32 @@ public final class GreetingServiceGrpc {
               com.example.grpc.GreetingServiceOuterClass.GetPersonResponse.getDefaultInstance()))
           .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("createPerson"))
           .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest,
+      com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> METHOD_UPDATE_PERSON =
+      io.grpc.MethodDescriptor.<com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest, com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "com.example.grpc.GreetingService", "updatePerson"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.GetPersonResponse.getDefaultInstance()))
+          .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("updatePerson"))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest,
+      com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse> METHOD_GET_PERSONS =
+      io.grpc.MethodDescriptor.<com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest, com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "com.example.grpc.GreetingService", "getPersons"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse.getDefaultInstance()))
+          .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("getPersons"))
+          .build();
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -94,9 +117,6 @@ public final class GreetingServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Defining a Service, a Service can have multiple RPC operations
-   * </pre>
    */
   public static abstract class GreetingServiceImplBase implements io.grpc.BindableService {
 
@@ -124,6 +144,20 @@ public final class GreetingServiceGrpc {
       asyncUnimplementedUnaryCall(METHOD_CREATE_PERSON, responseObserver);
     }
 
+    /**
+     */
+    public void updatePerson(com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_UPDATE_PERSON, responseObserver);
+    }
+
+    /**
+     */
+    public void getPersons(com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_PERSONS, responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -147,14 +181,25 @@ public final class GreetingServiceGrpc {
                 com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest,
                 com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>(
                   this, METHODID_CREATE_PERSON)))
+          .addMethod(
+            METHOD_UPDATE_PERSON,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest,
+                com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>(
+                  this, METHODID_UPDATE_PERSON)))
+          .addMethod(
+            METHOD_GET_PERSONS,
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest,
+                com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse>(
+                  this, METHODID_GET_PERSONS)))
           .build();
     }
   }
 
   /**
-   * <pre>
-   * Defining a Service, a Service can have multiple RPC operations
-   * </pre>
    */
   public static final class GreetingServiceStub extends io.grpc.stub.AbstractStub<GreetingServiceStub> {
     private GreetingServiceStub(io.grpc.Channel channel) {
@@ -198,12 +243,25 @@ public final class GreetingServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(METHOD_CREATE_PERSON, getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updatePerson(com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_UPDATE_PERSON, getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPersons(com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_GET_PERSONS, getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
-   * <pre>
-   * Defining a Service, a Service can have multiple RPC operations
-   * </pre>
    */
   public static final class GreetingServiceBlockingStub extends io.grpc.stub.AbstractStub<GreetingServiceBlockingStub> {
     private GreetingServiceBlockingStub(io.grpc.Channel channel) {
@@ -244,12 +302,23 @@ public final class GreetingServiceGrpc {
       return blockingUnaryCall(
           getChannel(), METHOD_CREATE_PERSON, getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.example.grpc.GreetingServiceOuterClass.GetPersonResponse updatePerson(com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_UPDATE_PERSON, getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse getPersons(com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_GET_PERSONS, getCallOptions(), request);
+    }
   }
 
   /**
-   * <pre>
-   * Defining a Service, a Service can have multiple RPC operations
-   * </pre>
    */
   public static final class GreetingServiceFutureStub extends io.grpc.stub.AbstractStub<GreetingServiceFutureStub> {
     private GreetingServiceFutureStub(io.grpc.Channel channel) {
@@ -293,11 +362,29 @@ public final class GreetingServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(METHOD_CREATE_PERSON, getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse> updatePerson(
+        com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_UPDATE_PERSON, getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse> getPersons(
+        com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_GET_PERSONS, getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GREETING = 0;
   private static final int METHODID_GET_PERSON_BY_ID = 1;
   private static final int METHODID_CREATE_PERSON = 2;
+  private static final int METHODID_UPDATE_PERSON = 3;
+  private static final int METHODID_GET_PERSONS = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -327,6 +414,14 @@ public final class GreetingServiceGrpc {
         case METHODID_CREATE_PERSON:
           serviceImpl.createPerson((com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest) request,
               (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PERSON:
+          serviceImpl.updatePerson((com.example.grpc.GreetingServiceOuterClass.CreatePersonRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetPersonResponse>) responseObserver);
+          break;
+        case METHODID_GET_PERSONS:
+          serviceImpl.getPersons((com.example.grpc.GreetingServiceOuterClass.GetAllPersonRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.GetAllPersonResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -392,6 +487,8 @@ public final class GreetingServiceGrpc {
               .addMethod(METHOD_GREETING)
               .addMethod(METHOD_GET_PERSON_BY_ID)
               .addMethod(METHOD_CREATE_PERSON)
+              .addMethod(METHOD_UPDATE_PERSON)
+              .addMethod(METHOD_GET_PERSONS)
               .build();
         }
       }

@@ -7,7 +7,9 @@ import com.example.grpc.repository.PersonRepo;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @GRpcService
@@ -39,14 +41,14 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
         responseObserver.onCompleted();
     }
 
-    public void getPersonById(GreetingServiceOuterClass.GetPersonRequest request,StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver){
-       Optional <Person> selected= personRepo.findById(request.getPersonId());
+    public void getPersonById(GreetingServiceOuterClass.GetPersonRequest request, StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+        Optional<Person> selected = personRepo.findById(request.getPersonId());
         GreetingServiceOuterClass.Person person = GreetingServiceOuterClass.Person.newBuilder()
                 .setAge(selected.get().getAge())
                 .setFirstName(selected.get().getFirstName())
                 .setLastName(selected.get().getLastName())
                 .build();
-       GreetingServiceOuterClass.GetPersonResponse response1= GreetingServiceOuterClass.GetPersonResponse.newBuilder()
+        GreetingServiceOuterClass.GetPersonResponse response1 = GreetingServiceOuterClass.GetPersonResponse.newBuilder()
                 .setPerson(person)
                 .build();
         responseObserver.onNext(response1);
@@ -55,8 +57,9 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
         responseObserver.onCompleted();
 
     }
-    public void createPerson(GreetingServiceOuterClass.CreatePersonRequest request,StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver){
-        Person person=new Person();
+
+    public void createPerson(GreetingServiceOuterClass.CreatePersonRequest request, StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
+        Person person = new Person();
         person.setAge(request.getAge());
         person.setFirstName(request.getFirstName());
         person.setLastName(request.getLastName());
@@ -72,17 +75,18 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
                 //.setPhoneNumbers(p.getPhoneNumbers())
                 .build();
 
-        GreetingServiceOuterClass.GetPersonResponse response2= GreetingServiceOuterClass.GetPersonResponse.newBuilder()
+        GreetingServiceOuterClass.GetPersonResponse response2 = GreetingServiceOuterClass.GetPersonResponse.newBuilder()
                 .setPerson(person1)
                 .build();
-             responseObserver.onNext(response2);
-                responseObserver.onCompleted();
+        responseObserver.onNext(response2);
+        responseObserver.onCompleted();
 
     }
-    public void updatePerson(GreetingServiceOuterClass.CreatePersonRequest request,StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver){
+
+    public void updatePerson(GreetingServiceOuterClass.CreatePersonRequest request, StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
         //from model
-        Optional <Person> selected= personRepo.findById(request.getPersonId());
-        if(selected.isPresent()){
+        Optional<Person> selected = personRepo.findById(request.getPersonId());
+        if (selected.isPresent()) {
             selected.get().setFirstName(request.getFirstName());
             selected.get().setLastName(request.getLastName());
             selected.get().setAge(request.getAge());
@@ -106,5 +110,30 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
         responseObserver.onCompleted();
 
 
+    }
+    public void getPersons(GreetingServiceOuterClass.GetAllPersonRequest request, StreamObserver<GreetingServiceOuterClass.GetAllPersonResponse> responseObserver){
+        List<Person> persons = personRepo.findAll();
+        List <GreetingServiceOuterClass.Person> listPerson =persons.stream().map((item)->{
+            GreetingServiceOuterClass.Person person2 = GreetingServiceOuterClass.Person.newBuilder()
+                    .setPersonId(item.getId())
+                    .setAge(item.getAge())
+                    .setFirstName(item.getFirstName())
+                    .setLastName(item.getLastName())
+                    .build();
+            return person2;
+
+        }).collect(Collectors.toList());
+        GreetingServiceOuterClass.GetAllPersonResponse allPersons = GreetingServiceOuterClass.GetAllPersonResponse.newBuilder()
+            .addAllAllPersons(listPerson)
+                .build();
+
+
+
+
+
+        responseObserver.onNext(allPersons);
+
+        // When you are done, you must call onCompleted.
+        responseObserver.onCompleted();
     }
 }

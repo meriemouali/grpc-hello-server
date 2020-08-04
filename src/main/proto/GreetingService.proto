@@ -42,10 +42,17 @@ message CreatePersonRequest{
   repeated string phone_numbers = 6;
 }
 // Defining a Service, a Service can have multiple RPC operations
+message GetAllPersonRequest{
+
+}
+message GetAllPersonResponse{
+  repeated  Person all_persons=1;
+}
 service GreetingService {
   // Define a RPC operation
   rpc greeting(HelloRequest) returns (HelloResponse);
   rpc getPersonById(GetPersonRequest) returns(GetPersonResponse);
   rpc createPerson(CreatePersonRequest) returns(GetPersonResponse);
   rpc updatePerson(CreatePersonRequest) returns(GetPersonResponse);
+  rpc getPersons(GetAllPersonRequest) returns(GetAllPersonResponse);
 }
