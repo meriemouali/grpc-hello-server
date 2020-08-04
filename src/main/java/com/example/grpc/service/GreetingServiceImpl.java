@@ -13,9 +13,8 @@ import java.util.stream.Collectors;
 
 
 @GRpcService
-
-
 public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImplBase {
+    
     private final PersonRepo personRepo;
 
     public GreetingServiceImpl(PersonRepo personRepo) {
@@ -27,16 +26,12 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
     public void greeting(GreetingServiceOuterClass.HelloRequest request,
                          StreamObserver<GreetingServiceOuterClass.HelloResponse> responseObserver) {
         // HelloRequest has toString auto-generated.
-        System.out.println(request);
-
         // You must use a builder to construct a new Protobuffer object
         GreetingServiceOuterClass.HelloResponse response = GreetingServiceOuterClass.HelloResponse.newBuilder()
                 .setGreeting("Hello there, " + request.getName())
                 .build();
-
         // Use responseObserver to send a single response back
         responseObserver.onNext(response);
-
         // When you are done, you must call onCompleted.
         responseObserver.onCompleted();
     }
@@ -52,8 +47,6 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
                 .setPerson(person)
                 .build();
         responseObserver.onNext(response1);
-
-        // When you are done, you must call onCompleted.
         responseObserver.onCompleted();
 
     }
@@ -65,8 +58,6 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
         person.setLastName(request.getLastName());
         person.setPhoneNumbers(request.getPhoneNumbersList());
         Person p = personRepo.save(person);
-
-
         GreetingServiceOuterClass.Person person1 = GreetingServiceOuterClass.Person.newBuilder()
                 .setPersonId(p.getId())
                 .setAge(p.getAge())
@@ -84,7 +75,6 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
     }
 
     public void updatePerson(GreetingServiceOuterClass.CreatePersonRequest request, StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver) {
-        //from model
         Optional<Person> selected = personRepo.findById(request.getPersonId());
         if (selected.isPresent()) {
             selected.get().setFirstName(request.getFirstName());
@@ -105,15 +95,12 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
                 .setPerson(person2)
                 .build();
         responseObserver.onNext(person);
-
-        // When you are done, you must call onCompleted.
         responseObserver.onCompleted();
-
-
     }
-    public void getPersons(GreetingServiceOuterClass.GetAllPersonRequest request, StreamObserver<GreetingServiceOuterClass.GetAllPersonResponse> responseObserver){
+
+    public void getPersons(GreetingServiceOuterClass.GetAllPersonRequest request, StreamObserver<GreetingServiceOuterClass.GetAllPersonResponse> responseObserver) {
         List<Person> persons = personRepo.findAll();
-        List <GreetingServiceOuterClass.Person> listPerson =persons.stream().map((item)->{
+        List<GreetingServiceOuterClass.Person> listPerson = persons.stream().map((item) -> {
             GreetingServiceOuterClass.Person person2 = GreetingServiceOuterClass.Person.newBuilder()
                     .setPersonId(item.getId())
                     .setAge(item.getAge())
@@ -124,16 +111,9 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
 
         }).collect(Collectors.toList());
         GreetingServiceOuterClass.GetAllPersonResponse allPersons = GreetingServiceOuterClass.GetAllPersonResponse.newBuilder()
-            .addAllAllPersons(listPerson)
+                .addAllAllPersons(listPerson)
                 .build();
-
-
-
-
-
         responseObserver.onNext(allPersons);
-
-        // When you are done, you must call onCompleted.
         responseObserver.onCompleted();
     }
 }

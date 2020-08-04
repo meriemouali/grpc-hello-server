@@ -46,7 +46,7 @@ message GetAllPersonRequest{
 
 }
 message GetAllPersonResponse{
-  repeated  Person all_persons=1;
+  repeated  Person all_persons = 1;
 }
 service GreetingService {
   // Define a RPC operation
