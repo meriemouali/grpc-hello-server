@@ -47,4 +47,5 @@ service GreetingService {
   rpc greeting(HelloRequest) returns (HelloResponse);
   rpc getPersonById(GetPersonRequest) returns(GetPersonResponse);
   rpc createPerson(CreatePersonRequest) returns(GetPersonResponse);
+  rpc updatePerson(CreatePersonRequest) returns(GetPersonResponse);
 }

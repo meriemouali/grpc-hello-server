@@ -38,6 +38,7 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
         // When you are done, you must call onCompleted.
         responseObserver.onCompleted();
     }
+
     public void getPersonById(GreetingServiceOuterClass.GetPersonRequest request,StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver){
        Optional <Person> selected= personRepo.findById(request.getPersonId());
         GreetingServiceOuterClass.Person person = GreetingServiceOuterClass.Person.newBuilder()
@@ -55,7 +56,6 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
 
     }
     public void createPerson(GreetingServiceOuterClass.CreatePersonRequest request,StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver){
-        System.out.println(request);
         Person person=new Person();
         person.setAge(request.getAge());
         person.setFirstName(request.getFirstName());
@@ -77,6 +77,34 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
                 .build();
              responseObserver.onNext(response2);
                 responseObserver.onCompleted();
+
+    }
+    public void updatePerson(GreetingServiceOuterClass.CreatePersonRequest request,StreamObserver<GreetingServiceOuterClass.GetPersonResponse> responseObserver){
+        //from model
+        Optional <Person> selected= personRepo.findById(request.getPersonId());
+        if(selected.isPresent()){
+            selected.get().setFirstName(request.getFirstName());
+            selected.get().setLastName(request.getLastName());
+            selected.get().setAge(request.getAge());
+            selected.get().setPhoneNumbers(request.getPhoneNumbersList());
+            personRepo.save(selected.get());
+
+        }
+        GreetingServiceOuterClass.Person person2 = GreetingServiceOuterClass.Person.newBuilder()
+                .setPersonId(selected.get().getId())
+                .setAge(selected.get().getAge())
+                .setFirstName(selected.get().getFirstName())
+                .setLastName(selected.get().getLastName())
+                //.setPhoneNumbers(p.getPhoneNumbers())
+                .build();
+        GreetingServiceOuterClass.GetPersonResponse person = GreetingServiceOuterClass.GetPersonResponse.newBuilder()
+                .setPerson(person2)
+                .build();
+        responseObserver.onNext(person);
+
+        // When you are done, you must call onCompleted.
+        responseObserver.onCompleted();
+
 
     }
 }
